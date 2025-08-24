@@ -1,0 +1,3 @@
+[submodule "libs/pyts"]
+	path = libs/pyts
+	url = https://gitlab.gpbin.ru/nwtn/trade-systems/pyts

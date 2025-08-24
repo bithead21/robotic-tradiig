@@ -1,51 +1,51 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Python CI
+#name: Python CI
 
 # Controls when the workflow will run
-on:
+#on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   #push:
    # branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-    types: [opened, synchronize, reopened]
+  #pull_request:
+    #branches: [ "main" ]
+    #types: [opened, synchronize, reopened]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+#jobs:
+  #build:
+    #runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: ["3.12", "3.13"]
+    #strategy:
+    #  matrix:
+     #   python-version: ["3.12", "3.13"]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    #steps:
+      #- name: Checkout repository
+      #  uses: actions/checkout@v3
 
-      - name: setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
+      #- name: setup Python
+       # uses: actions/setup-python@v4
+       # with:
+      #    python-version: ${{ matrix.python-version }}
 
-      - name: install deps
-        run: |
-          pip install --upgrade setuptools wheel
-          pip install -r deps.txt
+      #- name: install deps
+      #  run: |
+      #    pip install --upgrade setuptools wheel
+       #   pip install -r deps.txt
     
       #- name: link with flake8
         #run: |
           #pip install flake8
           #flake8 .  # Проверяем стиль кода с помощью Flake8
 
-      - name: run tests
-        run: |
-          python -m unittest discover -s tests
+      #- name: run tests
+      #  run: |
+      #   python -m unittest discover -s tests
   
-      - name: get test coverage
-        run: |
-          pip install coverage
-          python -m coverage run -m unittest discover -s tests
-          python -m coverage report
+      #- name: get test coverage
+      #  run: |
+      #    pip install coverage
+      #    python -m coverage run -m unittest discover -s tests
+       #   python -m coverage report
         
           
